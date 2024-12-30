@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Declaração</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Botão inicial (ocultado após clique) -->
+    <button id="start-btn" onclick="startSlide()">Clique para ver minha surpresa</button>
+
+    <!-- Área da imagem -->
+    <div id="image-container" class="image-container">
+      <img id="image" src="foto1.jpg" alt="Minha declaração" />
+    </div>
+
+    <!-- Botão de carta (estilo bala de mensagem) -->
+    <div id="letter-button" class="letter" onclick="openLetter()">
+      Nova mensagem ✉
+    </div>
+
+    <!-- Mensagem final (em forma de carta) -->
+    <div id="letter-content" class="letter-content">
+      <div class="letter-inner">
+        <h2>Minha mensagem para você</h2>
+        <p>
+          Meu bem, <br><br>
+          Como eu disse antes, eu queria te fazer uma surpresa, mas eu não sabia como...<br><br>
+          E foi dessa forma que eu encontrei de Demonstrar o pouco do tanto que Eu amo Você,<br><br>
+          eu amo a forma como você faz eu me sentir, Eu sou grato a Deus por ter colocado você na minha vida...<br><br>
+          por ter colocado essa mulher inteligente, maravilhosa, forte, a coé... Você é um espetáculo...<br><br>
+          E é com muito orgulho que eu digo que sou extremamente apaixonado por você, e que Eu te amo, muito muito,<br><br>
+          e apesar dessa Saudade, um tanto dolorosa... Não vejo dificuldades em amar você, eu amo amar você, o dia todo, todos os dias.<br><br>
+          eu não sou muito bom com texto, mas to me esforçando kkkkk, sério... Espero que você tenha gostado!<br><br>
+          Com Muito amor e Saudade, do seu namorado,<br><br>
+          <strong>Pablo.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <audio id="music" src="musica.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

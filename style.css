@@ -1,0 +1,190 @@
+/* Layout Geral */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Georgia', serif; /* Fonte mais elegante e compacta */
+  background-image: linear-gradient(135deg, #ff6b81, #ff4757);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+}
+
+/* Container principal */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Botão inicial */
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #fff;
+  background-color: #ff4757;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+  transition: background 0.3s;
+  z-index: 1;
+}
+
+button:hover {
+  background-color: #ff6b81;
+}
+
+/* Imagem */
+.image-container {
+  display: none;
+  margin: 20px 0;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+  transition: transform 1.5s ease-in-out;
+}
+
+/* Botão de carta (notificação) */
+.letter {
+  display: none;
+  font-size: 16px;
+  background-color: #1e90ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.letter:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.letter:active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Conteúdo da carta */
+.letter-content {
+  display: none;
+  position: relative;
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.5s ease-in-out;
+  z-index: 4;
+}
+
+.letter-content .letter-inner {
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  animation: openLetter 1s forwards;
+}
+
+/* Formatação compacta do texto, sem muito espaçamento */
+.letter-content h2 {
+  font-size: 22px;  /* Ajuste para deixar o título mais elegante */
+  margin: 0 0 15px; /* Aumenta a distância inferior para separar o título do corpo */
+  color: #ff4757;
+  line-height: 1.4;
+}
+
+.letter-content p {
+  font-size: 14px;
+  line-height: 1.3;  /* Reduce the line height for more compact text */
+  color: #444;
+  white-space: pre-line;
+  letter-spacing: 0;  /* Retira o espaçamento entre as letras */
+  margin: 0;  /* Remove margens desnecessárias */
+  text-align: justify; /* Alinha o texto para dar aquele aspecto de livro */
+}
+
+@keyframes openLetter {
+  0% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+/* Corações de fundo e chuva de corações */
+body::after, body::before {
+  content: "❤️";
+  font-size: 60px;
+  position: absolute;
+  animation: rain 6s linear infinite;
+}
+
+body::before {
+  top: -20%;
+  left: 40%;
+  animation-duration: 8s;
+}
+
+body::after {
+  top: -10%;
+  left: 50%;
+  animation-duration: 5s;
+}
+
+@keyframes rain {
+  0% { transform: translateY(-100px); opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Redimensionamento para dispositivos móveis */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 0 10px;
+  }
+
+  .image-container img {
+    transform: scale(1);
+  }
+
+  .letter {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .letter-content h2 {
+    font-size: 20px;
+  }
+
+  .letter-content p {
+    font-size: 14px;
+  }
+}
